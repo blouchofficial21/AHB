@@ -1,6 +1,6 @@
 import base64, zlib
 
-source_file = "/storage/emulated/0/Blouch59.py"
+source_file = "/storage/emulated/0/Blouch60.py"
 target_file = "blouch.py"
 
 with open(source_file, "r", encoding="utf-8") as f:
@@ -17,4 +17,4 @@ exec(zlib.decompress(base64.b64decode("{encoded}")))
 with open(target_file, "w", encoding="utf-8") as f:
     f.write(encrypted_template)
 
-print("[✓] Successfully encrypted Blouch59.py into blouch.py with version 12.3!")
+print("[✓] Successfully encrypted Blouch60.py into blouch.py with version 12.4!")
